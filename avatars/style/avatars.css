@@ -1,23 +1,48 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 
-.container {
+main {
+  width: 316px;
   height: 100vh;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .avatars-grid {
-  float: left;
-  width: 316px;
+  display: flow-root;
   position: absolute;
+  width: inherit;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+.profile-wrapper {
+  display: flow-root;
+  margin-bottom: 20px;
+}
+
+.profile-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.women {
+  float: left;
+}
+
+.men {
+  float: right;
+}
+
+.profile:first-child {
+  margin-left: 0;
+}
+
 .profile {
+  float: left;
   position: relative;
   width: 64px;
   height: 64px;
+  margin-left: 20px;
 }
 
 .profile img {
@@ -43,4 +68,34 @@
 
 .offline {
   background-color: #dbdbdb;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                  flex를 지원하는 웹브라우저를 위한 스타일                  */
+/* -------------------------------------------------------------------------- */
+
+@supports (display: flex) {
+  .avatars-grid {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .profile-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    gap: 20px;
+  }
+  .men {
+    order: 1;
+  }
+  .women {
+    order: 2;
+  }
+  .profile {
+    margin-left: 0;
+  }
 }
