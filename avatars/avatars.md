@@ -38,15 +38,17 @@
 
 ### float
 
-- 아이템 요소인 'profile'에 float: left;를 적용하고 부모요소인 'profile-wrapper'에 display: flow-root;를 적용하여 높이값이 인식되도록 했습니다.
-- first-child, last-child 적용 (특정 클래스에 스타일 분기 처리 하지 않고 효율적인 수정을 하기 위함)
-- 'profile-wrapper'에 margin-bottom: 20px을 공통 적용하고, 'last-child'에 margin-bottom: 0;을 적용해 가장 마지막 그룹 하단에는 여백이 없도록 했습니다.
-- 'profile'에 margin-left: 20px;을 공통 적용하고, 'first-child'에 margin-left:0;을 적용하여 가장 앞에 있는 아이템 요소는 왼쪽 여백이 없도록 했습니다.
-- 'women'묶음에 float:left; 'men'묶음에 float: right;를 적용하여 여자 프로필 그룹이 상단에, 남자 프로필 그룹이 하단에 위치하도록 했습니다.
+> - 아이템 요소인 'profile'에 float: left;를 적용하고 부모요소인 'profile-wrapper'에 display: flow-root;를 적용하여 높이값이 인식되도록 했습니다.
+> - first-child, last-child 적용
+
+    - 'profile-wrapper'에 margin-bottom: 20px을 공통 적용하고, 'last-child'에 margin-bottom: 0;을 적용해 가장 마지막 그룹 하단에는 여백이 없도록 했습니다.
+    - 'profile'에 margin-left: 20px;을 공통 적용하고, 'first-child'에 margin-left:0;을 적용하여 가장 앞에 있는 아이템 요소는 왼쪽 여백이 없도록 했습니다.
+
+> - 'women'묶음에 float:left; 'men'묶음에 float: right;를 적용하여 여자 프로필 그룹이 상단에, 남자 프로필 그룹이 하단에 위치하도록 했습니다.
 
 ### flex
 
-- @supports (display: flex)로 플렉스를 지원하는 환경에서 스타일이 다르게 적용될 수 있도록 했습니다.
-- 'profile-wrapper'의 부모요소인 'main'은 flex-direction: colum; / 'profile'의 부모요소인 'profile-wrapper'는 flex-flow: row nowrap;으로 각 콘텐츠 배치에 맞게 정렬했습니다.
-- float에서 적용했던 margin값을 0으로 적용하여 값을 삭제하고, gap을 사용하여 아이템 사이 여백을 적용했습니다.
-- order를 활용하여 'men'묶음을 상단에, 'women'묶음을 하단으로 배치했습니다.
+> - @supports (display: flex)로 플렉스를 지원하는 환경에서 스타일이 다르게 적용될 수 있도록 했습니다.
+> - 'profile-wrapper'의 부모요소인 'main'은 flex-direction: colum; / 'profile'의 부모요소인 'profile-wrapper'는 flex-flow: row nowrap;으로 각 콘텐츠 배치에 맞게 정렬했습니다.
+> - float에서 적용했던 margin값을 0으로 적용하여 값을 삭제하고, gap을 사용하여 아이템 사이 여백을 적용했습니다.
+> - order를 활용하여 'men'묶음을 상단에, 'women'묶음을 하단으로 배치했습니다.
