@@ -5,3 +5,9 @@
 ### 아바타 과제
 
 - avatars.md: <https://github.com/hyesu-jeong/homework/blob/main/avatars/avatars.md>
+
+---
+
+### 네이버 과제
+
+- naver.md: <https://github.com/hyesu-jeong/homework/blob/main/naver/naver.md>
