@@ -1,6 +1,6 @@
 # 마크업 구조
 
-!(/markuplayout.jpg)
+!(https://raw.githubusercontent.com/hyesu-jeong/homework/main/naver/markuplayout.jpg)
 
 ## 대체 이미지 관련
 
