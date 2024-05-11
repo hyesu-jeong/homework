@@ -89,7 +89,7 @@ header {
   border: 0;
 }
 
-.login-keep-group {
+.login-check-group {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -98,7 +98,7 @@ header {
   font-size: 1rem;
   color: var(--color-text);
 
-  .keep-checkbox {
+  .login-check {
     position: relative;
 
     input {
@@ -119,21 +119,26 @@ header {
     }
   }
 
-  .keep-ip {
+  .ip_check {
     position: relative;
 
     a {
       color: inherit;
       text-decoration: none;
+      margin-right: 0.25rem;
     }
 
     input {
       position: absolute;
       appearance: none;
+      width: 100%;
+      width: -moz-available; /* WebKit-based browsers will ignore this. */
+      width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+      width: fill-available;
+      height: 20px;
     }
 
     label {
-      margin-left: 0.25rem;
       color: #767676;
       .ip-off {
         display: inline-block;
