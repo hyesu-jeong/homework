@@ -19,12 +19,12 @@
   <body>
     <main>
       <header role="doc-title">
-        <img
-          src="/logo.svg"
-          onerror="this.onerror=null; this.src='/logo.png'"
-          alt="네이버"
-        />
+        <picture>
+          <source srcset="/logo.svg" type="image/svg" />
+          <img src="/logo.png" alt="네이버" />
+        </picture>
       </header>
+
       <form action="/" class="login-form">
         <fieldset>
           <legend class="sr-only">회원 로그인 폼</legend>
@@ -66,6 +66,7 @@
               <a
                 href="./ip_security.html"
                 target="_blank"
+                rel="noopener noreferrer"
                 id="ip_security"
                 title="IP보안"
                 ><span class="ip-text">IP 보안</span></a
