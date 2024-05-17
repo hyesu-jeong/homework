@@ -55,14 +55,16 @@
 
 /* 텍스트 컴포넌트 */
 
+/* 텍스트 컬러 - 화이트 */
 .text-white {
   color: var(--white);
 }
-
+/* 텍스트 컬러 - 블랙 */
 .text-black {
   color: var(--black);
 }
 
+/* 대제목 */
 .headline {
   font-size: var(--large-text);
   line-height: 1.2;
@@ -73,6 +75,8 @@
     padding-top: var(--extra-large-spacing);
   }
 }
+
+/* 부제목 */
 .subtitle {
   font-size: var(--base-text);
   line-height: var(--line-normal);
@@ -81,6 +85,8 @@
     font-size: var(--medium-text);
   }
 }
+
+/* 추가 정보 */
 .desc {
   font-size: var(--small-text);
   line-height: var(--line-normal);
@@ -94,6 +100,7 @@
 }
 
 /* 버튼 컴포넌트 */
+/* 버튼 - 공통 */
 .button {
   --button-color-blue: var(--blue-300);
   --button-color-black: var(--black);
@@ -106,6 +113,7 @@
   }
 }
 
+/* Fill + Blue */
 .button-fill-blue {
   color: var(--white);
   background-color: var(--button-color-blue);
@@ -116,6 +124,18 @@
   }
 }
 
+/* Fill + Black */
+.button-fill-black {
+  color: var(--white);
+  background-color: var(--button-color-black);
+  border: 1px solid var(--button-color-black);
+
+  &:hover {
+    background-color: var(--dark-gray);
+  }
+}
+
+/* Outline - Blue */
 .button-outline-blue {
   color: var(--blue-100);
   background: transparent;
@@ -127,16 +147,7 @@
   }
 }
 
-.button-fill-black {
-  color: var(--white);
-  background-color: var(--button-color-black);
-  border: 1px solid var(--button-color-black);
-
-  &:hover {
-    background-color: var(--dark-gray);
-  }
-}
-
+/* Outline - Black */
 .button-outline-black {
   color: var(--button-color-black);
   background: transparent;
@@ -148,7 +159,7 @@
   }
 }
 
-/* 배경 레이아웃 */
+/* 배경 이미지 레이아웃 */
 .image-wrapper {
   height: 100%;
   width: 100%;
@@ -168,6 +179,8 @@
 }
 
 /* 제품 배경 이미지 컴포넌트 */
+
+/* 아이패드 프로 */
 .ipad-pro {
   .image-wrapper .bg-image {
     background-image: image-set(
@@ -184,6 +197,8 @@
     }
   }
 }
+
+/* 아이패드 에어 */
 .ipad-air {
   .image-wrapper .bg-image {
     background-image: image-set(
@@ -200,6 +215,8 @@
     }
   }
 }
+
+/* 아이폰 15 프로 */
 .iphone-15-pro {
   .image-wrapper .bg-image {
     background-image: image-set(
@@ -216,6 +233,8 @@
     }
   }
 }
+
+/* 아이폰 15 */
 .iphone-15 {
   .image-wrapper .bg-image {
     background-image: image-set(
@@ -224,6 +243,8 @@
     );
   }
 }
+
+/* 워치 */
 .watch {
   .image-wrapper .bg-image {
     background-image: image-set(
@@ -232,6 +253,8 @@
     );
   }
 }
+
+/* 맥북 에어 */
 .macbook-air {
   .image-wrapper .bg-image {
     background-image: image-set(
@@ -240,6 +263,8 @@
     );
   }
 }
+
+/* 에어팟 프로 */
 .airpobs-pro {
   .image-wrapper .bg-image {
     background-image: image-set(
