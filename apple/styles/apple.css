@@ -108,26 +108,44 @@
 
 .button-fill-blue {
   color: var(--white);
-  background: var(--button-color-blue);
+  background-color: var(--button-color-blue);
   border: 1px solid var(--button-color-blue);
+
+  &:hover {
+    background-color: var(--blue-200);
+  }
 }
 
 .button-outline-blue {
   color: var(--blue-100);
   background: transparent;
   border: 1px solid var(--button-color-blue);
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--button-color-blue);
+  }
 }
 
 .button-fill-black {
   color: var(--white);
-  background: var(--button-color-black);
+  background-color: var(--button-color-black);
   border: 1px solid var(--button-color-black);
+
+  &:hover {
+    background-color: var(--dark-gray);
+  }
 }
 
 .button-outline-black {
   color: var(--button-color-black);
   background: transparent;
   border: 1px solid var(--button-color-black);
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--button-color-black);
+  }
 }
 
 /* 배경 레이아웃 */
@@ -150,8 +168,6 @@
 }
 
 /* 제품 배경 이미지 컴포넌트 */
-
-/* 아이패드 프로 */
 .ipad-pro {
   .image-wrapper .bg-image {
     background-image: image-set(
