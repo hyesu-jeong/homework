@@ -11,3 +11,9 @@
 ### 네이버 과제
 
 - naver.md: <https://github.com/hyesu-jeong/homework/blob/main/naver/naver.md>
+
+---
+
+### 애플 과제
+
+- apple.md: <https://github.com/hyesu-jeong/homework/blob/main/apple/apple.md>
