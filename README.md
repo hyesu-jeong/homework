@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 아토믹 컴포넌트 만들기
 
 바닐라 프로젝트 결과물 중 일부를, 리액트를 사용해 아토믹 컴포넌트로 구현
@@ -33,3 +34,24 @@
 - data를 분리하여 렌더링
 - Swiperjs 리액트에서 적용해보기
 - scss 활용하여 스타일링
+=======
+# homework
+
+테킷 프론트엔드 스쿨 10기 과제 저장소
+
+### 아바타 과제
+
+- avatars.md: <https://github.com/hyesu-jeong/homework/blob/main/avatars/avatars.md>
+
+---
+
+### 네이버 과제
+
+- naver.md: <https://github.com/hyesu-jeong/homework/blob/main/naver/naver.md>
+
+---
+
+### 애플 과제
+
+- apple.md: <https://github.com/hyesu-jeong/homework/blob/main/apple/apple.md>
+>>>>>>> 2ff212ff696e4e2762d93cb13f8f5ea94e68aea1
