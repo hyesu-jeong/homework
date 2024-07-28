@@ -1,0 +1,73 @@
+@use "./fuctions" as *;
+/* Typography */
+$base-font-family: "Pretendard Variable", sans-serif;
+
+.heading-medium {
+  font-family: $base-font-family;
+  font-size: rem(32);
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-large {
+  font-family: $base-font-family;
+  font-size: rem(38);
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-xlarge {
+  font-family: $base-font-family;
+  font-size: rem(42);
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-xxlarge {
+  font-family: $base-font-family;
+  font-size: rem(46);
+  line-height: 1.4;
+  font-weight: 700;
+}
+.heading-xxxlarge {
+  font-family: $base-font-family;
+  font-size: rem(50);
+  line-height: 1.4;
+  font-weight: 700;
+}
+/* ------------------- Label ------------------ */
+.label-small {
+  font-family: $base-font-family;
+  font-size: rem(28);
+  line-height: 1.5;
+  font-weight: 600;
+}
+.label-medium {
+  font-family: $base-font-family;
+  font-size: rem(30);
+  line-height: 1.5;
+  font-weight: 600;
+}
+.label-large {
+  font-family: $base-font-family;
+  font-size: rem(32);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* ------------------- Paragraph ------------------ */
+.paragraph-small {
+  font-family: $base-font-family;
+  font-size: rem(16);
+  line-height: 1.6;
+  font-weight: 400;
+}
+.paragraph-medium {
+  font-family: $base-font-family;
+  font-size: rem(20);
+  line-height: 1.6;
+  font-weight: 400;
+}
+.paragraph-large {
+  font-family: $base-font-family;
+  font-size: rem(28);
+  line-height: 1.6;
+  font-weight: 400;
+}
