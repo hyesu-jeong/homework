@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# 아토믹 컴포넌트 만들기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+바닐라 프로젝트 결과물 중 일부를, 리액트를 사용해 아토믹 컴포넌트로 구현
 
-## Available Scripts
+### ✔️ 구현 대상
 
-In the project directory, you can run:
+타잉 메인 페이지에 있는 카드 슬라이드 영역에 날씨 아이콘 추가
 
-### `npm start`
+<img src="https://github.com/user-attachments/assets/f6bf7e06-da01-4a63-8959-e0a8a4b2bed0" alt="taing">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✔️ 피그마 컴포넌트 설계
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### [🔗 피그마 링크](https://www.figma.com/design/vFO7G1b4oyV4zzdZfWF8uK/%5B%EA%B3%BC%EC%A0%9C%5D-%EC%95%84%ED%86%A0%EB%AF%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8?node-id=0-1&t=nHOVsZWX9mQDB1Zw-1)
 
-### `npm test`
+<img src="https://github.com/user-attachments/assets/897ee31f-a2aa-45b0-a967-4d0a58e5ac5d" alt="figma">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| ![component](https://github.com/user-attachments/assets/804a698a-3d41-44b1-ab4f-5c81a360c665) | ![instance](https://github.com/user-attachments/assets/8459be53-33c3-40be-aa8e-f31e9711bca2) |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 
-### `npm run build`
+- 컴포넌트에 프로퍼티 추가
+  - 슬라이드 아이템: 날씨 아이콘 Show 토글 / 타이틀 텍스트, 에피소드 텍스트
+  - 날씨 아이콘: 상태 리스트
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✔️ 리액트 컴포넌트 구현
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="https://github.com/user-attachments/assets/d46406a2-90ee-4c58-93f7-d5348b70e7f1" alt="react">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 구현 방식
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- CRA 도구 활용하여 리액트 환경 구성
+- JSX 방식으로 마크업
+- SlideItem컴포넌트를 SlideListPage에 import하여 사용
+- data를 분리하여 렌더링
+- Swiperjs 리액트에서 적용해보기
+- scss 활용하여 스타일링
