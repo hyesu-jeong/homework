@@ -10,7 +10,7 @@
 
 ![component](https://github.com/user-attachments/assets/6c78bdce-b281-48dd-9ea2-47d2209cfba5)
 
-##### 타이틀, 에피소드, 썸네일 이미지
+#### 타이틀, 에피소드, 썸네일 이미지
 
 ```javascript
 import { string, number, exact } from "prop-types";
@@ -22,7 +22,7 @@ export const SlideItemType = exact({
 });
 ```
 
-##### 날씨 아이콘
+#### 날씨 아이콘
 
 이미지 타입에 따라 렌더링 여부 결정
 
