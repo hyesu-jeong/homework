@@ -4,9 +4,10 @@
 
 ### 환경 구성
 
-지난 과제에서 CRA 도구를 사용했었는데 이번엔 Vite 사용하여 환경 구성함
+Vite 도구 사용
 
 ### 컴포넌트 타입 지정
+#### [🔗 피그마 링크](https://www.figma.com/design/vFO7G1b4oyV4zzdZfWF8uK/%5B%EA%B3%BC%EC%A0%9C%5D-%EC%95%84%ED%86%A0%EB%AF%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8?node-id=0-1&t=H2wg4v0ZNkPnAc1X-1)
 
 ![component](https://github.com/user-attachments/assets/6c78bdce-b281-48dd-9ea2-47d2209cfba5)
 
