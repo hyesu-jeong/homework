@@ -1,0 +1,21 @@
+@use './../utils/variables' as var;
+@use './../utils/mixins' as mix;
+@use './../utils/typography' as typo;
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: typo.$base-font-family;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only {
+  @include mix.a11yHidden;
+}
