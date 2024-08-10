@@ -15,6 +15,7 @@ function Board({ squares, setSquares, history, setHistory }) {
       <Squares
         isNext={isNext}
         setIsNext={setIsNext}
+        winnerInfo={winnerInfo}
         setWinnerInfo={setWinnerInfo}
         setIsDraw={setIsDraw}
         squares={squares}

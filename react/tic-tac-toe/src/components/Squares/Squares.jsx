@@ -13,6 +13,7 @@ Squares.propTypes = {
 function Squares({
   isNext,
   setIsNext,
+  winnerInfo,
   setWinnerInfo,
   setIsDraw,
   squares,
@@ -30,6 +31,7 @@ function Squares({
           setSquares={setSquares}
           setIsNext={setIsNext}
           index={index}
+          winnerInfo={winnerInfo}
           setWinnerInfo={setWinnerInfo}
           setIsDraw={setIsDraw}
           history={history}

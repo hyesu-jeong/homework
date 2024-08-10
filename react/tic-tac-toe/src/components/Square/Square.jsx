@@ -20,13 +20,14 @@ function Square({
   squares,
   setSquares,
   index,
+  winnerInfo,
   setWinnerInfo,
   setIsDraw,
   history,
   setHistory,
 }) {
   const handleClick = () => {
-    if (squares[index] !== null) return;
+    if (squares[index] !== null || winnerInfo) return;
     setIsNext(!isNext);
 
     // squares 배열 업데이트 코드
@@ -51,7 +52,11 @@ function Square({
   };
 
   return (
-    <button className={S.Square} onClick={handleClick}>
+    <button
+      className={`${S.Square} ${
+        winnerInfo?.condition.includes(index) ? S.active : ""
+      }`}
+      onClick={handleClick}>
       {squares[index]}
     </button>
   );

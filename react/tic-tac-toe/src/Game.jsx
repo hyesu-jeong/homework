@@ -17,7 +17,11 @@ function Game() {
         history={history}
         setHistory={setHistory}
       />
-      <History history={history} setSquares={setSquares} />
+      <History
+        history={history}
+        setHistory={setHistory}
+        setSquares={setSquares}
+      />
     </div>
   );
 }
