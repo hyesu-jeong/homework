@@ -1,7 +1,6 @@
 import S from "./Status.module.css";
 import { PLAYER } from "../../constants";
 import { bool, object } from "prop-types";
-import { useEffect } from "react";
 
 Status.propTypes = {
   isNext: bool,
@@ -10,9 +9,6 @@ Status.propTypes = {
 };
 
 function Status({ isNext, winnerInfo, isDraw }) {
-  useEffect(() => {
-    console.log("winnerInfo", winnerInfo, "isDraw", isDraw);
-  }, [winnerInfo, isDraw]);
   return (
     <h2 className={S.Status}>
       {/* winnerInfo가 null이 아닐때 */}

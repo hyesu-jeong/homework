@@ -10,9 +10,16 @@ Squares.propTypes = {
   setIsDraw: func,
 };
 
-function Squares({ isNext, setIsNext, setWinnerInfo, setIsDraw }) {
-  const [squares, setSquares] = useState(Array(9).fill(null)); //9칸에 뭐가 있는지 저장하는 배열
-
+function Squares({
+  isNext,
+  setIsNext,
+  setWinnerInfo,
+  setIsDraw,
+  squares,
+  setSquares,
+  history,
+  setHistory,
+}) {
   return (
     <div className={S.Squares}>
       {squares.map((el, index) => (
@@ -24,7 +31,9 @@ function Squares({ isNext, setIsNext, setWinnerInfo, setIsDraw }) {
           setIsNext={setIsNext}
           index={index}
           setWinnerInfo={setWinnerInfo}
-          setIsDraw={setIsDraw}></Square>
+          setIsDraw={setIsDraw}
+          history={history}
+          setHistory={setHistory}></Square>
       ))}
     </div>
   );

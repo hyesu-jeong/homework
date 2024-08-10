@@ -22,13 +22,11 @@ function Square({
   index,
   setWinnerInfo,
   setIsDraw,
+  history,
+  setHistory,
 }) {
-  let [player, setPlayer] = useState(null);
-
   const handleClick = () => {
-    //버튼 값 바꿔주는 코드
-    if (player !== null) return; //빈칸일때만
-    isNext ? setPlayer(PLAYER.ONE) : setPlayer(PLAYER.TWO);
+    if (squares[index] !== null) return;
     setIsNext(!isNext);
 
     // squares 배열 업데이트 코드
@@ -46,11 +44,15 @@ function Square({
 
     //빈칸이 있을때는 배열에 null값이 있어서 false, 꽉차면 true
     setIsDraw(newSquares.every(Boolean));
+
+    //history 배열에 newSquares 배열 저장
+    setHistory([...history, newSquares]);
+    // console.log("history", history);
   };
 
   return (
     <button className={S.Square} onClick={handleClick}>
-      {player}
+      {squares[index]}
     </button>
   );
 }
