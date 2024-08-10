@@ -1,10 +1,7 @@
-import { useState } from "react";
 import Square from "../Square/Square";
 import S from "./Squares.module.css";
 
-function Squares() {
-  let [isNext, setIsNext] = useState(true);
-
+function Squares({ isNext, setIsNext }) {
   return (
     <div className={S.Squares}>
       <Square isNext={isNext} setIsNext={setIsNext}></Square>
