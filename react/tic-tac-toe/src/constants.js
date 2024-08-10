@@ -15,3 +15,17 @@ export const WINNER_CONDITIONS = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
+export const calculateWinner = (squares) => {
+  // console.log("squares", squares);
+  let winnerInfo = null;
+  for (const [a, b, c] of WINNER_CONDITIONS) {
+    const winner = squares[a];
+    if (winner && winner === squares[b] && winner === squares[c]) {
+      console.log("GAME OVER");
+      winnerInfo = { winner, condition: [a, b, c] };
+      break;
+    }
+  }
+  return winnerInfo;
+};
