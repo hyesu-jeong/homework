@@ -1,11 +1,13 @@
+import { calculateWinner } from "../../constants";
 import S from "./History.module.css";
 
-function History({ history, setHistory, setSquares }) {
+function History({ history, setHistory, setSquares, setWinnerInfo }) {
   function handleClick(index) {
     setSquares([...history[index]]);
 
     //버튼 클릭 시 해당 히스토리만큼 배열을 잘라서 업데이트
     setHistory(history.slice(0, index + 1));
+    setWinnerInfo(calculateWinner([...history[index]]));
   }
 
   return (

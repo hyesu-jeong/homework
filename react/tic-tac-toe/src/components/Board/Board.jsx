@@ -4,9 +4,16 @@ import S from "./Board.module.css";
 import { useState } from "react";
 
 // Stateless Component
-function Board({ squares, setSquares, history, setHistory }) {
+function Board({
+  squares,
+  setSquares,
+  history,
+  setHistory,
+  winnerInfo,
+  setWinnerInfo,
+}) {
   let [isNext, setIsNext] = useState(true);
-  let [winnerInfo, setWinnerInfo] = useState(null);
+
   let [isDraw, setIsDraw] = useState(false);
 
   return (
