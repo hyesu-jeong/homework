@@ -2,19 +2,22 @@ import Squares from "../Squares/Squares";
 import Status from "../Status/Status";
 import S from "./Board.module.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Stateless Component
 function Board() {
   let [isNext, setIsNext] = useState(true);
   let [winnerInfo, setWinnerInfo] = useState(null);
+  let [isDraw, setIsDraw] = useState(false);
+
   return (
     <div className={S.Board}>
-      <Status isNext={isNext} winnerInfo={winnerInfo} />
+      <Status isNext={isNext} winnerInfo={winnerInfo} isDraw={isDraw} />
       <Squares
         isNext={isNext}
         setIsNext={setIsNext}
         setWinnerInfo={setWinnerInfo}
+        setIsDraw={setIsDraw}
       />
     </div>
   );

@@ -2,15 +2,16 @@ import S from "./Square.module.css";
 import { useState } from "react";
 import { PLAYER } from "../../constants";
 import { calculateWinner } from "../../constants";
-import { Boolean, Function, Number } from "prop-types";
+import { bool, func, number, array } from "prop-types";
 
 Square.propTypes = {
-  isNext: Boolean,
-  squares: Array,
-  setSquares: Function,
-  setIsNext: Function,
-  index: Number,
-  setWinnerInfo: Function,
+  isNext: bool,
+  squares: array,
+  setSquares: func,
+  setIsNext: func,
+  index: number,
+  setWinnerInfo: func,
+  setIsDraw: func,
 };
 
 function Square({
@@ -20,6 +21,7 @@ function Square({
   setSquares,
   index,
   setWinnerInfo,
+  setIsDraw,
 }) {
   let [player, setPlayer] = useState(null);
 
@@ -41,6 +43,9 @@ function Square({
     //squares 배열을 newSquares 배열로  업데이트
     setSquares(newSquares);
     setWinnerInfo(calculateWinner(newSquares));
+
+    //빈칸이 있을때는 배열에 null값이 있어서 false, 꽉차면 true
+    setIsDraw(newSquares.every(Boolean));
   };
 
   return (

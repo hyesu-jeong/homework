@@ -1,15 +1,16 @@
 import { useState } from "react";
 import Square from "../Square/Square";
 import S from "./Squares.module.css";
-import { Boolean, Function } from "prop-types";
+import { bool, func } from "prop-types";
 
 Squares.propTypes = {
-  isNext: Boolean,
-  setIsNext: Function,
-  setWinnerInfo: Function,
+  isNext: bool,
+  setIsNext: func,
+  setWinnerInfo: func,
+  setIsDraw: func,
 };
 
-function Squares({ isNext, setIsNext, setWinnerInfo }) {
+function Squares({ isNext, setIsNext, setWinnerInfo, setIsDraw }) {
   const [squares, setSquares] = useState(Array(9).fill(null)); //9칸에 뭐가 있는지 저장하는 배열
 
   return (
@@ -22,7 +23,8 @@ function Squares({ isNext, setIsNext, setWinnerInfo }) {
           setSquares={setSquares}
           setIsNext={setIsNext}
           index={index}
-          setWinnerInfo={setWinnerInfo}></Square>
+          setWinnerInfo={setWinnerInfo}
+          setIsDraw={setIsDraw}></Square>
       ))}
     </div>
   );
