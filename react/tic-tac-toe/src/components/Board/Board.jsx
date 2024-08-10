@@ -7,10 +7,15 @@ import { useState } from "react";
 // Stateless Component
 function Board() {
   let [isNext, setIsNext] = useState(true);
+  let [winnerInfo, setWinnerInfo] = useState(null);
   return (
     <div className={S.Board}>
-      <Status isNext={isNext} />
-      <Squares isNext={isNext} setIsNext={setIsNext} />
+      <Status isNext={isNext} winnerInfo={winnerInfo} />
+      <Squares
+        isNext={isNext}
+        setIsNext={setIsNext}
+        setWinnerInfo={setWinnerInfo}
+      />
     </div>
   );
 }

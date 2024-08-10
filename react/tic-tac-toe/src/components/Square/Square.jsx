@@ -1,9 +1,26 @@
 import S from "./Square.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { PLAYER } from "../../constants";
 import { calculateWinner } from "../../constants";
+import { Boolean, Function, Number } from "prop-types";
 
-function Square({ isNext, setIsNext, squares, setSquares, index }) {
+Square.propTypes = {
+  isNext: Boolean,
+  squares: Array,
+  setSquares: Function,
+  setIsNext: Function,
+  index: Number,
+  setWinnerInfo: Function,
+};
+
+function Square({
+  isNext,
+  setIsNext,
+  squares,
+  setSquares,
+  index,
+  setWinnerInfo,
+}) {
   let [player, setPlayer] = useState(null);
 
   const handleClick = () => {
@@ -23,8 +40,7 @@ function Square({ isNext, setIsNext, squares, setSquares, index }) {
 
     //squares 배열을 newSquares 배열로  업데이트
     setSquares(newSquares);
-    const winnerInfo = calculateWinner(newSquares);
-    console.log("winnerInfo", winnerInfo);
+    setWinnerInfo(calculateWinner(newSquares));
   };
 
   return (
