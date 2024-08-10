@@ -1,4 +1,4 @@
-.component {
+.Square {
   width: var(--square-size, 42px);
   height: var(--square-size, 42px);
 

@@ -5,7 +5,7 @@ import S from "./Board.module.css";
 // Stateless Component
 function Board() {
   return (
-    <div className={S.component}>
+    <div className={S.Board}>
       <Status />
       <Squares />
     </div>
