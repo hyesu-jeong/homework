@@ -1,5 +1,14 @@
 import { calculateWinner } from "../../constants";
+import { INITIAL_SQUARES } from "../../constants";
 import S from "./History.module.css";
+import { array, func } from "prop-types";
+
+History.propTypes = {
+  history: array,
+  setHistory: func,
+  setSquares: func,
+  setWinnerInfo: func,
+};
 
 function History({ history, setHistory, setSquares, setWinnerInfo }) {
   function handleClick(index) {
@@ -17,8 +26,9 @@ function History({ history, setHistory, setSquares, setWinnerInfo }) {
           <button
             type="button"
             onClick={() => {
-              setSquares(Array(9).fill(null));
+              setSquares(INITIAL_SQUARES);
               setHistory([]);
+              setWinnerInfo(null); // 승리 정보 초기화
             }}>
             게임 시작
           </button>

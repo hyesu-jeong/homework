@@ -1,18 +1,22 @@
-import { useState } from "react";
 import Square from "../Square/Square";
 import S from "./Squares.module.css";
-import { bool, func } from "prop-types";
+import { bool, func, array, object } from "prop-types";
 
 Squares.propTypes = {
-  isNext: bool,
-  setIsNext: func,
+  currentPlayer: bool,
+  setcurrentPlayer: func,
+  winnerInfo: object,
   setWinnerInfo: func,
   setIsDraw: func,
+  squares: array,
+  setSquares: func,
+  history: array,
+  setHistory: func,
 };
 
 function Squares({
-  isNext,
-  setIsNext,
+  currentPlayer,
+  setcurrentPlayer,
   winnerInfo,
   setWinnerInfo,
   setIsDraw,
@@ -26,10 +30,10 @@ function Squares({
       {squares.map((el, index) => (
         <Square
           key={index}
-          isNext={isNext}
+          currentPlayer={currentPlayer}
           squares={squares}
           setSquares={setSquares}
-          setIsNext={setIsNext}
+          setcurrentPlayer={setcurrentPlayer}
           index={index}
           winnerInfo={winnerInfo}
           setWinnerInfo={setWinnerInfo}

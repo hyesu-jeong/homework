@@ -4,11 +4,14 @@ import S from "./styles/Game.module.css";
 import "./styles/main.css";
 
 import { useState } from "react";
+import { INITIAL_SQUARES } from "./constants";
 
 function Game() {
   const [history, setHistory] = useState([]);
-  let [winnerInfo, setWinnerInfo] = useState(null);
-  const [squares, setSquares] = useState(Array(9).fill(null)); //9칸에 뭐가 있는지 저장하는 배열
+  const [winnerInfo, setWinnerInfo] = useState(null);
+  const [squares, setSquares] = useState(INITIAL_SQUARES);
+  const [currentPlayer, setcurrentPlayer] = useState(true);
+  const [isDraw, setIsDraw] = useState(false);
 
   return (
     <div className={S.component}>
@@ -19,6 +22,10 @@ function Game() {
         setHistory={setHistory}
         winnerInfo={winnerInfo}
         setWinnerInfo={setWinnerInfo}
+        currentPlayer={currentPlayer}
+        setcurrentPlayer={setcurrentPlayer}
+        isDraw={isDraw}
+        setIsDraw={setIsDraw}
       />
       <History
         history={history}

@@ -1,9 +1,21 @@
 import Squares from "../Squares/Squares";
 import Status from "../Status/Status";
 import S from "./Board.module.css";
-import { useState } from "react";
+import { array, func, object, bool } from "prop-types";
 
-// Stateless Component
+Board.propTypes = {
+  squares: array,
+  setSquares: func,
+  history: array,
+  setHistory: func,
+  winnerInfo: object,
+  setWinnerInfo: func,
+  currentPlayer: bool,
+  setcurrentPlayer: func,
+  isDraw: bool,
+  setIsDraw: func,
+};
+
 function Board({
   squares,
   setSquares,
@@ -11,17 +23,21 @@ function Board({
   setHistory,
   winnerInfo,
   setWinnerInfo,
+  currentPlayer,
+  setcurrentPlayer,
+  isDraw,
+  setIsDraw,
 }) {
-  let [isNext, setIsNext] = useState(true);
-
-  let [isDraw, setIsDraw] = useState(false);
-
   return (
     <div className={S.Board}>
-      <Status isNext={isNext} winnerInfo={winnerInfo} isDraw={isDraw} />
+      <Status
+        currentPlayer={currentPlayer}
+        winnerInfo={winnerInfo}
+        isDraw={isDraw}
+      />
       <Squares
-        isNext={isNext}
-        setIsNext={setIsNext}
+        currentPlayer={currentPlayer}
+        setcurrentPlayer={setcurrentPlayer}
         winnerInfo={winnerInfo}
         setWinnerInfo={setWinnerInfo}
         setIsDraw={setIsDraw}

@@ -1,8 +1,11 @@
-// 게임에서 사용되는 말을 상수로 정의합니다.
+// 게임에서 사용되는 말을 상수로 정의
 export const PLAYER = {
   ONE: "🎃",
   TWO: "🤖",
 };
+
+// 게임 초기 상태 값
+export const INITIAL_SQUARES = Array(9).fill(null);
 
 // 게임의 승리 조건
 export const WINNER_CONDITIONS = [
@@ -16,8 +19,8 @@ export const WINNER_CONDITIONS = [
   [2, 4, 6],
 ];
 
+// 게임이 끝났는지 진행중인지 확인 후 결과를 반환
 export const calculateWinner = (squares) => {
-  // console.log("squares", squares);
   let winnerInfo = null;
   for (const [a, b, c] of WINNER_CONDITIONS) {
     const winner = squares[a];

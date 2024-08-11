@@ -3,12 +3,12 @@ import { PLAYER } from "../../constants";
 import { bool, object } from "prop-types";
 
 Status.propTypes = {
-  isNext: bool,
+  currentPlayer: bool,
   winnerInfo: object,
   isDraw: bool,
 };
 
-function Status({ isNext, winnerInfo, isDraw }) {
+function Status({ currentPlayer, winnerInfo, isDraw }) {
   return (
     <h2 className={S.Status}>
       {/* winnerInfo가 null이 아닐때 */}
@@ -16,7 +16,7 @@ function Status({ isNext, winnerInfo, isDraw }) {
         ? `위너!! ${winnerInfo.winner}`
         : isDraw
         ? `음... 비겼네. 😩 한 판 더?!`
-        : `다음 플레이어 : ${isNext ? PLAYER.ONE : PLAYER.TWO}`}
+        : `다음 플레이어 : ${currentPlayer ? PLAYER.ONE : PLAYER.TWO}`}
     </h2>
   );
 }
