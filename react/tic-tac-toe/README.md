@@ -7,7 +7,7 @@
 3. 게임 진행: 플레이어는 차례로 번갈아가며 빈칸에 기호를 배치합니다.
 4. 승리 방법: 플레이어는 연속으로 세 개의 기호를 배치하여 승리합니다.
 5. 무승부: 모든 칸이 차 있고 아무도 세 개의 기호를 연속으로 배치하지 못하면 게임은 무승부로 간주됩니다.
-6. 우측 히스토리 버튼으로 게임을 처음 혹은 중간단계로 되돌릴 수 있습니다.
+6. 게임판 우측에 있는 히스토리 버튼으로 게임을 처음 혹은 중간단계로 되돌릴 수 있습니다.
 
 ### 환경 구성
 
@@ -20,25 +20,24 @@ react, vite, prop-types, css module
 ├── Game.jsx
 ├── components
 │   ├── Board
-│   │   ├── Board.jsx
-│   │   └── Board.module.css
+│   │   └── Board.jsx
 │   ├── History
-│   │   ├── History.jsx
-│   │   └── History.module.css
+│   │   └── History.jsx
 │   ├── Square
-│   │   ├── Square.jsx
-│   │   └── Square.module.css
+│   │   └── Square.jsx
 │   ├── Squares
-│   │   ├── Squares.jsx
-│   │   └── Squares.module.css
+│   │   └── Squares.jsx
 │   └── Status
-│       ├── Status.jsx
-│       └── Status.module.css
+│       └── Status.jsx
 ```
 
 ### 상태 관리
 
 - **squares** 게임 보드 각 칸의 상태를 나타내는 배열로 게임의 현재 상태와 승리 조건을 판단하는 역할을 합니다.
+  ```javascript
+  const [squares, setSquares] = useState(INITIAL_SQUARES);
+  const INITIAL_SQUARES = Array(9).fill(null);
+  ```
 - **currentPlayer** 현재 플레이어가 누구인지 "🤖" 또는 "🎃"을 나타내는 상태를 나타냅니다.
   ```javascript
   currentPlayer ? 🤖 : 🎃
@@ -89,6 +88,6 @@ react, vite, prop-types, css module
 
 ### 후기
 
-- 강의시간에 이미 전체 과정을 한 번 봤지만, 처음 접하는 느낌으로 작은 컴포넌트에서 상태를 만들면서 작업했는데 결국 다른 컴포넌트에서도 상태 공유가 필요해지면서 중간중간 상태를 끌어올리는 작업이 필요했습니다.
+- 강의시간에 이미 전체 과정을 한 번 봤지만, 처음 접하는 느낌으로 작은 컴포넌트에서 상태를 만들면서 작업했는데 결국 다른 컴포넌트에 상태 공유가 필요해지면서 중간중간 상태를 끌어올리는 작업이 필요했습니다.
 - 상태를 끌어올리면서 props 전달하는 뎁스가 깊어졌는데 더 효율적인 방법이 있을지 궁금합니다.
 - 여전히 자바스크립트 부족함을 많이 느끼고 있습니다.
