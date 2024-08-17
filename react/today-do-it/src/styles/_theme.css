@@ -1,0 +1,129 @@
+[data-theme="light"] {
+  /* ------------ background ----------- */
+  --forground: var(--black);
+  --background: var(--white);
+  --viewport: var(--gray-50);
+  --primary: var(--blue);
+  --secondary: var(--lightblue);
+
+  /* --------------- text -------------- */
+  --text-headline: var(--black);
+  --text-date: var(--gray-400);
+
+  /* --------------- logo -------------- */
+  --logo-text: var(--black);
+  --logo-checkmark: var(--gray-300);
+  --logo-box: var(--blue);
+  --logo-mono: var(--black);
+
+  /* --------------- button -------------- */
+  --btn-label: var(--lightblue);
+  --btn-primary-background: var(--blue);
+  --btn-secondary-label: var(--blue);
+  --btn-secondary-background: var(--lightblue);
+  --btn-disabled-label: var(--gray-300);
+  --btn-disabled-background: var(--gray-200);
+
+  /* --------------- status -------------- */
+  --status-active: var(--blue);
+  --status-deactive: var(--gray-300);
+
+  /* -------------- checkbox ------------- */
+  --checkbox-active: var(--blue);
+  --checkbox-deactive: var(--gray-200);
+  --checked: var(--white);
+
+  /* ---------------- input --------------- */
+  --input-normal: var(--gray-300);
+  --input-focus: var(--blue);
+
+  /* ---------------- do it --------------- */
+  --doit-forground: var(--gray-400);
+  --doit-background: var(--white);
+  --doit-title: var(--blue);
+  --doit-divider: var(--gray-200);
+
+  /* --------------- select -------------- */
+  --select-forground: var(--gray-300);
+  --select-background: var(--white);
+  --selected: var(--blue);
+  --select-border: var(--gray-200);
+
+  /* ---------------- time --------------- */
+  --time-normal: var(--gray-300);
+  --time-focus: var(--blue);
+
+  /* ---------------- dim --------------- */
+  --dim-background: rgba(249, 249, 249, 0.15);
+
+  /* --------------- dialog -------------- */
+  --dialog-title: var(--blue);
+  --dialog-background: var(--white);
+}
+
+[data-theme="dark"] {
+  /* ------------ background ----------- */
+  --forground: var(--white);
+  --background: var(--black);
+  --viewport: var(--black);
+  --primary: var(--lightblue);
+  --secondary: var(--blue);
+
+  /* --------------- text -------------- */
+  --text-headline: var(--white);
+  --text-date: var(--gray-300);
+
+  /* --------------- logo -------------- */
+  --logo-text: var(--white);
+  --logo-checkmark: var(--gray-300);
+  --logo-box: var(--blue);
+  --logo-mono: var(--white);
+
+  /* --------------- button -------------- */
+  --btn-label: var(--lightblue);
+  --btn-primary-background: var(--blue);
+  --btn-secondary-label: var(--blue);
+  --btn-secondary-background: var(--lightblue);
+  --btn-disabled-label: var(--gray-300);
+  --btn-disabled-background: var(--gray-500);
+
+  /* --------------- status -------------- */
+  --status-active: var(--blue);
+  --status-deactive: var(--gray-300);
+
+  /* -------------- checkbox ------------- */
+  --checkbox-active: var(--blue);
+  --checkbox-deactive: var(--gray-300);
+  --checked: var(--white);
+
+  /* ---------------- input --------------- */
+  --input-normal: var(--gray-400);
+  --input-focus: var(--blue);
+
+  /* ---------------- do it --------------- */
+  --doit-forground: var(--gray-400);
+  --doit-background: var(--lightblue);
+  --doit-title: var(--blue);
+  --doit-divider: var(--gray-200);
+
+  /* --------------- select -------------- */
+  --select-forground: var(--gray-300);
+  --select-background: var(--black);
+  --selected: var(--blue);
+  --select-border: var(--gray-400);
+
+  /* ---------------- time --------------- */
+  --time-normal: var(--gray-400);
+  --time-focus: var(--dodgerblue);
+
+  /* ---------------- dim --------------- */
+  --dim-background: rgba(255, 255, 255, 0.1);
+
+  /* --------------- dialog -------------- */
+  --dialog-title: var(--blue);
+  --dialog-background: var(--black);
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}

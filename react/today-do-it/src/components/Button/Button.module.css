@@ -1,0 +1,11 @@
+.Button {
+  display: inline-flex;
+  padding: var(--space-4-half, 18px) var(--space-5, 20px);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--space-3, 12px);
+  opacity: var(--sds-size-stroke-border);
+  background: var(--Button-background, #0760fb);
+  color: var(--Button-color, #fff);
+}
