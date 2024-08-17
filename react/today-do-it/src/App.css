@@ -1,0 +1,14 @@
+.btnWrapper {
+  display: flex;
+}
+.card {
+  border: solid 1px var(--gray-200);
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.card-text {
+}
+.checked {
+  text-decoration: line-through;
+}
