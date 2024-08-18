@@ -1,5 +1,7 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sheet } from "react-modal-sheet";
+import pb from "../../api/pocketbase";
+import { updatePb } from "../../api/update";
 import { useGlobalStore } from "../../store/useGlobalStore";
 import Button from "../Button/Button";
 
@@ -15,7 +17,13 @@ export default function Modal() {
   const timeARef = useRef();
   const timeBRef = useRef();
 
-  const handleClick = () => {
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const [textValue, setTextValue] = useState("");
+  const [timeA, setTimeA] = useState("");
+  const [timeB, setTimeB] = useState("");
+
+  const handleClick = async () => {
     setIsOpen(false);
     setList([
       ...list,
@@ -29,7 +37,37 @@ export default function Modal() {
         isArchived: false,
       },
     ]);
+    setIsDisabled(true);
+    const data = {
+      field: [
+        ...list,
+        {
+          textValue: textValueRef.current,
+          textAreaValue: textAreaValueRef.current,
+          timeA: timeARef.current,
+          timeB: timeBRef.current,
+          id: Date.now(),
+          isChecked: false,
+          isArchived: false,
+        },
+      ],
+    };
+    updatePb(data);
   };
+
+  const handleCancel = () => {
+    setIsOpen(false);
+    setIsDisabled(true);
+  };
+
+  useEffect(() => {
+    console.log(pb);
+    if (textValue.length > 0 && timeA.length > 0 && timeB.length > 0) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  }, [textValue, timeA, timeB]);
 
   return (
     <Sheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
@@ -41,15 +79,14 @@ export default function Modal() {
             type="text"
             placeholder="치맥 파티!"
             onChange={(e) => {
-              console.log(e.target.value);
               textValueRef.current = e.target.value;
+              setTextValue(e.target.value);
             }}
           />
           <p>간단히 적어볼까?</p>
           <textarea
             placeholder="오늘 베프가 집에 놀러 오니까, 저녁에는 베프랑 테라스에서 치맥 파티닷!"
             onChange={(e) => {
-              console.log(e.target.value);
               textAreaValueRef.current = e.target.value;
             }}
           />
@@ -60,16 +97,24 @@ export default function Modal() {
             onChange={(e) => {
               timeARef.current = e.target.value;
               console.log(e.target.value);
+              setTimeA(e.target.value);
             }}
           />
           <input
             type="time"
             step="60"
-            onChange={(e) => (timeBRef.current = e.target.value)}
+            onChange={(e) => {
+              timeBRef.current = e.target.value;
+              setTimeB(e.target.value);
+            }}
           />
           <div className="btnWrapper">
-            <Button onClick={handleClick}>저장</Button>
-            <Button onClick={() => setIsOpen(false)}>취소</Button>
+            <Button
+              className={`${isDisabled ? "disabled" : ""}`}
+              onClick={handleClick}>
+              저장
+            </Button>
+            <Button onClick={handleCancel}>취소</Button>
           </div>
         </Sheet.Content>
       </Sheet.Container>

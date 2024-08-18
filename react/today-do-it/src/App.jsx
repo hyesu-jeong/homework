@@ -3,6 +3,7 @@ import "./App.css";
 import Button from "./components/Button/Button";
 import CardList from "./components/CardList/CardList";
 import Modal from "./components/Modal/Modal";
+import Tab from "./components/Tab/Tab";
 import { useGlobalStore } from "./store/useGlobalStore";
 
 function App() {
@@ -10,14 +11,9 @@ function App() {
 
   const setIsOpen = useGlobalStore((state) => state.setIsOpen);
   const list = useGlobalStore((state) => state.list);
-  const todo = useGlobalStore((state) => state.todo);
   const setTodo = useGlobalStore((state) => state.setTodo);
-  const done = useGlobalStore((state) => state.done);
   const setDone = useGlobalStore((state) => state.setDone);
-  const archived = useGlobalStore((state) => state.archived);
   const setArchived = useGlobalStore((state) => state.setArchived);
-
-  const setCurrentTab = useGlobalStore((state) => state.setCurrentTab);
 
   useEffect(() => {
     setTodo(list.filter((item) => !item.isChecked));
@@ -37,30 +33,7 @@ function App() {
         }}>
         생각났어?
       </Button>
-      <div
-        onClick={() => {
-          setCurrentTab("all");
-        }}>
-        모두 {list.length}
-      </div>
-      <div
-        onClick={() => {
-          setCurrentTab("todo");
-        }}>
-        할일 {todo.length}
-      </div>
-      <div
-        onClick={() => {
-          setCurrentTab("done");
-        }}>
-        한일 {done.length}
-      </div>
-      <div
-        onClick={() => {
-          setCurrentTab("archived");
-        }}>
-        저장 {archived.length}
-      </div>
+      <Tab />
 
       <CardList />
       <Modal />

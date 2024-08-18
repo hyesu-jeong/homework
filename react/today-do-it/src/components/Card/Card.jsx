@@ -1,25 +1,43 @@
-import PropTypes from "prop-types";
+import { bool, number, shape, string } from "prop-types";
+import { updatePb } from "../../api/update";
 import { useGlobalStore } from "../../store/useGlobalStore";
 
 Card.propTypes = {
-  item: PropTypes.object.isRequired,
-  index: PropTypes.number.isRequired,
+  item: shape({
+    id: number,
+    isArchived: bool,
+    isChecked: bool,
+    textAreaValue: string,
+    textValue: string,
+  }).isRequired,
+  index: number,
 };
 
 export default function Card({ item, index }) {
   const list = useGlobalStore((state) => state.list);
   const setList = useGlobalStore((state) => state.setList);
+  const id = item.id;
 
   const handleClick = () => {
     list[index].isChecked = !list[index].isChecked;
     setList([...list]);
+    const data = {
+      field: [...list],
+    };
+    updatePb(data);
   };
 
   const handleDelete = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    list.splice(index, 1);
-    setList([...list]);
+
+    const filteredList = list.filter((list) => list.id !== id);
+    setList([...filteredList]);
+
+    const data = {
+      field: [...filteredList],
+    };
+    updatePb(data);
   };
 
   const handleArchive = (e) => {
@@ -27,6 +45,10 @@ export default function Card({ item, index }) {
     e.stopPropagation();
     list[index].isArchived = !list[index].isArchived;
     setList([...list]);
+    const data = {
+      field: [...list],
+    };
+    updatePb(data);
   };
   return (
     <div key={index} className="card" onClick={handleClick}>

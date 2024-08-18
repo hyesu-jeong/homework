@@ -12,3 +12,7 @@
 .checked {
   text-decoration: line-through;
 }
+.tab {
+  display: flex;
+  gap: 24px;
+}
